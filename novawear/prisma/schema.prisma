@@ -1,15 +1,14 @@
 // NOVAWEAR — Prisma schema
 //
-// Datasource: SQLite for zero-config local development (this sandbox has no
-// PostgreSQL server available). The schema intentionally avoids Postgres-only
-// features (native enums, array columns, @db.Text) so it stays byte-for-byte
-// portable: switching `provider` below to "postgresql" and pointing
-// DATABASE_URL at a managed instance (Neon/Supabase/Railway) is the entire
-// migration. Status/role/type fields use validated string constants
+// Datasource: PostgreSQL (Neon). The schema was originally written against
+// SQLite for zero-config local dev, intentionally avoiding Postgres-only
+// features (native enums, array columns, @db.Text) so this switch is the
+// entire migration — status/role/type fields use validated string constants
 // (see src/lib/constants.ts) instead of native enums for that reason.
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
