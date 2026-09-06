@@ -5,6 +5,7 @@
       "name": "novawear-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
+      "cwd": "novawear",
       "port": 3000,
       "autoPort": true
     }
