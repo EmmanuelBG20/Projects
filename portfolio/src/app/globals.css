@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #08080b;
+}
+
+body {
+  @apply bg-ink-950 text-paper-50 font-body antialiased;
+}
+
+::selection {
+  @apply bg-accent/40 text-white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-ink-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a45;
+}
+
+@layer components {
+  .container-xl {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-accent-light;
+  }
+
+  .btn-pill {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform duration-300;
+  }
+
+  .btn-solid {
+    @apply btn-pill bg-paper-50 text-ink-950 hover:scale-[1.03];
+  }
+
+  .btn-outline {
+    @apply btn-pill border border-white/15 text-paper-50 hover:border-white/40 hover:scale-[1.03];
+  }
+}
+
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
