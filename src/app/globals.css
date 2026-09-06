@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 25% 97%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 0% 8%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 40 12% 93%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 40 12% 92%;
+    --muted-foreground: 0 0% 42%;
+
+    --accent: 40 20% 90%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 3 62% 46%;
+    --destructive-foreground: 40 20% 98%;
+
+    --success: 142 33% 30%;
+    --success-foreground: 40 20% 98%;
+
+    --rust: 16 55% 42%;
+    --rust-foreground: 40 20% 98%;
+
+    --border: 40 10% 86%;
+    --input: 40 10% 82%;
+    --ring: 0 0% 8%;
+
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+}
+
+@layer utilities {
+  .container-padded {
+    @apply container;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in-view {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+/* Reveal-on-scroll: elements start hidden and are flipped visible by an
+   IntersectionObserver adding this class (see hooks/use-reveal.ts). */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
