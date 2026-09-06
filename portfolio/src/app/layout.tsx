@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://emmanuelbg20.dev"),
+  metadataBase: new URL("https://portfolio-gules-xi-54.vercel.app"),
   title: "Emmanuel Bermúdez Gutiérrez — Desarrollador Full Stack",
   description:
     "Construyo productos de e-commerce reales: pagos, inventario e integraciones que funcionan en producción, no solo en la demo.",

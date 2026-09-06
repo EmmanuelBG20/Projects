@@ -24,6 +24,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Auth.js", "Wompi"],
     repoUrl: "https://github.com/EmmanuelBG20/Projects/tree/main/basti-motos-app",
+    liveUrl: "https://basti-motos-app.vercel.app",
     accent: "#ff6a1a",
   },
   {
