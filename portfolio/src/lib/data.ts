@@ -40,6 +40,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Prisma", "Auth.js", "TanStack Query", "Playwright"],
     repoUrl: "https://github.com/EmmanuelBG20/Projects/tree/main/novawear",
+    liveUrl: "https://novawear-one.vercel.app",
     accent: "#22d3ee",
   },
 ];
