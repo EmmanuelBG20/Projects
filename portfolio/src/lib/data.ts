@@ -7,6 +7,7 @@ export type Project = {
   stack: string[];
   repoUrl: string;
   liveUrl?: string;
+  screenshot?: string;
   accent: string;
 };
 
@@ -25,6 +26,7 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Auth.js", "Wompi"],
     repoUrl: "https://github.com/EmmanuelBG20/Projects/tree/main/basti-motos-app",
     liveUrl: "https://basti-motos-app.vercel.app",
+    screenshot: "/screenshots/basti-motos.png",
     accent: "#ff6a1a",
   },
   {
@@ -41,6 +43,7 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "TypeScript", "Prisma", "Auth.js", "TanStack Query", "Playwright"],
     repoUrl: "https://github.com/EmmanuelBG20/Projects/tree/main/novawear",
     liveUrl: "https://novawear-one.vercel.app",
+    screenshot: "/screenshots/novawear.png",
     accent: "#22d3ee",
   },
 ];

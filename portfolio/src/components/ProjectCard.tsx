@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Magnetic } from "@/components/MagneticButton";
@@ -37,22 +38,35 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
           </div>
-          <div
-            className="flex aspect-[16/11] flex-col justify-between p-6"
-            style={{ background: `linear-gradient(155deg, ${project.accent}22, transparent 60%)` }}
-          >
-            <div className="flex gap-2">
-              <div className="h-6 w-24 rounded-md bg-white/10" />
-              <div className="h-6 w-6 rounded-md bg-white/10" />
-              <div className="h-6 w-6 rounded-md bg-white/10" />
+          {project.screenshot ? (
+            <div className="relative aspect-[16/11]">
+              <Image
+                src={project.screenshot}
+                alt={`Captura de ${project.name}`}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover object-top"
+                priority={index === 0}
+              />
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="aspect-square rounded-lg border border-white/10 bg-white/[0.04]" />
-              ))}
+          ) : (
+            <div
+              className="flex aspect-[16/11] flex-col justify-between p-6"
+              style={{ background: `linear-gradient(155deg, ${project.accent}22, transparent 60%)` }}
+            >
+              <div className="flex gap-2">
+                <div className="h-6 w-24 rounded-md bg-white/10" />
+                <div className="h-6 w-6 rounded-md bg-white/10" />
+                <div className="h-6 w-6 rounded-md bg-white/10" />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="aspect-square rounded-lg border border-white/10 bg-white/[0.04]" />
+                ))}
+              </div>
+              <div className="h-9 w-32 rounded-full" style={{ background: project.accent }} />
             </div>
-            <div className="h-9 w-32 rounded-full" style={{ background: project.accent }} />
-          </div>
+          )}
         </div>
       </motion.div>
 
