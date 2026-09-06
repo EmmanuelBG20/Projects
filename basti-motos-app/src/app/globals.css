@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  /* Los paneles off-canvas (carrito, menú móvil) usan `translateX(100%)`
+     sobre `position: fixed`; sin esto el navegador cuenta ese espacio
+     como overflow horizontal de la página y aparece un scroll lateral. */
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-carbon-900 text-neutral-100 font-body antialiased;
+}
+
+::selection {
+  @apply bg-racing-orange/40 text-white;
+}
+
+/* Scrollbar discreto, estilo taller */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-carbon-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-carbon-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-graphite-400;
+}
+
+@layer components {
+  .container-app {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl2 shadow-card;
+  }
+
+  .section-tag {
+    @apply inline-block text-xs font-semibold uppercase tracking-widest text-racing-orange mb-3;
+  }
+
+  .section-title {
+    @apply font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-neutral-400 max-w-2xl mb-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-racing-orange disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-racing-orange to-racing-red text-white shadow-glow hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn bg-carbon-700 text-white border border-white/10 hover:bg-carbon-600;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-white border border-white/20 hover:border-racing-orange hover:text-racing-orange;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg bg-carbon-800 border border-white/10 px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-racing-orange transition-colors;
+  }
+
+  .label-field {
+    @apply block text-sm font-medium text-neutral-300 mb-1.5;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
