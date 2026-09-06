@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://emmanuelbg20.dev"),
-  title: "Emmanuel Bermúdez — Desarrollador Full Stack",
+  title: "Emmanuel Bermúdez Gutiérrez — Desarrollador Full Stack",
   description:
     "Construyo productos de e-commerce reales: pagos, inventario e integraciones que funcionan en producción, no solo en la demo.",
   openGraph: {
-    title: "Emmanuel Bermúdez — Desarrollador Full Stack",
+    title: "Emmanuel Bermúdez Gutiérrez — Desarrollador Full Stack",
     description:
       "Construyo productos de e-commerce reales: pagos, inventario e integraciones que funcionan en producción, no solo en la demo.",
     type: "website",

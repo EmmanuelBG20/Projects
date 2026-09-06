@@ -56,6 +56,7 @@ export const SKILLS: SkillGroup[] = [
 ];
 
 export const CONTACT = {
+  name: "Emmanuel Bermúdez Gutiérrez",
   email: "emmanuelbermu9@gmail.com",
   github: "https://github.com/EmmanuelBG20",
   githubHandle: "@EmmanuelBG20",
